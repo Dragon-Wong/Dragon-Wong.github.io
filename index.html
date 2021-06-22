@@ -192,7 +192,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-06-22 15:46:20 / 修改时间：15:52:50" itemprop="dateCreated datePublished" datetime="2021-06-22T15:46:20+08:00">2021-06-22</time>
+              <time title="创建时间：2021-06-22 15:46:20 / 修改时间：16:02:54" itemprop="dateCreated datePublished" datetime="2021-06-22T15:46:20+08:00">2021-06-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -220,12 +220,15 @@
 
       
           <ul>
-<li>首先需要在项目中添加 actuator 依赖<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li>
-<li>actuator 默认暴露的http端口只有 info 和 health，需要把 loggers 端点暴露出来<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">management:</span></span><br><span class="line">  <span class="attr">endpoints:</span></span><br><span class="line">    <span class="attr">web:</span></span><br><span class="line">      <span class="attr">exposure:</span></span><br><span class="line">        <span class="attr">include:</span> <span class="string">health,</span> <span class="string">info,</span> <span class="string">loggers</span></span><br></pre></td></tr></table></figure></li>
-<li>查看日志信息<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X GET &#x27;http://localhost:8080/actuator/loggers&#x27;</span><br></pre></td></tr></table></figure></li>
-<li>动态修改日志级别<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> url最后跟的是想要改变日志级别的包名</span></span><br><span class="line">curl -H &quot;Content-Type:application/json&quot; -X POST -d &#x27;&#123;&quot;configuredLevel&quot;:&quot;DEBUG&quot;&#125;&#x27; &#x27;localhost:8080/actuator/loggers/com.xxx.xxx&#x27;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+<li>首先需要在项目中添加 actuator 依赖<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/22/dynamic-log-level/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
